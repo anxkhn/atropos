@@ -35,4 +35,4 @@ repos:
     rev: v2.4.2
     hooks:
     -   id: codespell
-        args: ["--skip", "*.csv,*.html", "-L", "te,ans,sems,lsat,anc,strokin,lod,nam,ques,unparseable,rouge,oll,managin,expressio,re-declare"]
+        args: ["--skip", "*.csv,*.html", "-L", "te,ans,sems,lsat,anc,strokin,lod,nam,ques,unparseable,rouge,oll,re-declare"]
