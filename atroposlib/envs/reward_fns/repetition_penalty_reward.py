@@ -252,9 +252,9 @@ class RepetitionPenaltyReward(RewardFunction):
 
                 logger.info(
                     f"Word rep: {word_repetition_rate:.3f}, Phrase rep: {phrase_repetition_rate:.3f}, "
-                    f"Consecutive rep: {consecutive_repetition_rate:.3f}, ",
+                    f"Consecutive rep: {consecutive_repetition_rate:.3f}, "
                     f"Sentence rep: {beginning_repetition_rate:.3f}, "
-                    f"Overall score: {repetition_score:.3f}, penalty: {penalty:.3f}",
+                    f"Overall score: {repetition_score:.3f}, penalty: {penalty:.3f}"
                 )
                 rewards.append(penalty)
 
