@@ -120,7 +120,7 @@ class ServerManager:
                 else:
                     num_training_nodes = int(os.environ.get("NUM_TRAINING_NODES"))
                     for node in nodelist[num_training_nodes:]:
-                        for i in range(8 // os.environ.get("INFER_TP", 1)):
+                        for i in range(8 // int(os.environ.get("INFER_TP", 1))):
                             urls.append(f"http://{node}:{9000 + i}/v1")
                 openai_configs = []
             else:
@@ -172,7 +172,7 @@ class ServerManager:
             for node in nodelist[num_training_nodes:]:
                 if node == "":
                     continue
-                for i in range(8 // os.environ.get("INFER_TP", 1)):
+                for i in range(8 // int(os.environ.get("INFER_TP", 1))):
                     urls.append(f"http://{node}:{9000 + i}/v1")
             # assume at least one good config is passed in
             new_configs = []
