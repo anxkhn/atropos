@@ -59,7 +59,7 @@ def test_tokenize_for_trainer_mask_len_last_turn_only():
     assert resp["tokens"] == total_toks
     assert all([x == -100 for x in resp["masks"][: len(prefix)]])
     assert all([x != -100 for x in resp["masks"][len(prefix) :]])
-    assert resp.get("messages", None is None)
+    assert resp.get("messages", None) is None
     # This time with add messages
     messages = [
         {"role": "user", "content": "hi"},
@@ -82,7 +82,7 @@ def test_tokenize_for_trainer_mask_len_last_turn_only():
         assert resp["tokens"] == total_toks[:-1]
         assert all([x == -100 for x in resp["masks"][: len(prefix)]])
         assert all([x != -100 for x in resp["masks"][len(prefix) :]])
-        assert resp.get("messages", None is None)
+        assert resp.get("messages", None) is None
 
 
 # Tests requiring TEST_MASKS data file have been removed
